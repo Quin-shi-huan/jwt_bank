@@ -3,7 +3,7 @@ from .interfaces.balance_editor import BalanceEditorInterface
 
 class BalanceEditor(BalanceEditorInterface):
     def __init__(self, user_repository: UserRepositoryInterface) -> None:
-        self.__user_repository: user_repository
+        self.__user_repository = user_repository
 
     def edit(self, user_id: int, new_balance: float) -> dict:
         self.__user_repository.edit_balance(user_id, new_balance)
