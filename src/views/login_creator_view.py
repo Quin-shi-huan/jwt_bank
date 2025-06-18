@@ -13,7 +13,7 @@ class LoginCreatorView(ViewInterface):
 
         self.__validate_inputs(username, password)
 
-        response = self.__controller.registry(username, password)
+        response = self.__controller.create(username, password)
         return HttpResponse(body={ "data": response }, status_code=200)
 
     def __validate_inputs(self, username: any, password: any) -> None:
